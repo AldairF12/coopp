@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Coop Platformer WebRTC</title>
+    <script type="module" crossorigin src="/assets/index-BQTDVp_q.js"></script>
+    <link rel="stylesheet" crossorigin href="/assets/index-Cfbq9t1l.css">
+  </head>
+  <body>
+    <div id="game-container"></div>
+    
+    <div id="ui-layer">
+      <div id="menu">
+        <h2>Coop Platformer</h2>
+        <div id="action-buttons">
+            <button id="btn-create">Crear Sala Nueva</button>
+            <br><br>
+            <input type="text" id="input-room" placeholder="CÓDIGO (EJ. ABCD)" maxlength="4">
+            <button id="btn-join">Unirse a Sala</button>
+        </div>
+        <div id="invite-section" style="display: none; margin-top: 20px;">
+          <p style="color: #4CAF50; font-weight: bold; margin-bottom: 5px;">¡Sala Creada!</p>
+          <p style="font-size: 14px; margin-top: 0;">Escanea para unirte:</p>
+          <img id="qr-code" src="" alt="Código QR" width="150" height="150" style="border: 2px solid #fff; border-radius: 8px;">
+          
+          <p style="font-size: 12px; margin-top: 10px; margin-bottom: 5px;">O comparte este enlace:</p>
+          <input type="text" id="share-link" readonly style="width: 80%; font-size: 12px; background: #222; color: #aaa; border: 1px solid #555;" onclick="this.select();">
+        </div>
+        <p id="status-text">Esperando acción...</p>
+      </div>
+    </div>
+
+    <div id="mobile-controls" style="display: none;">
+        <div class="control-group left-group">
+            <div id="btn-left" class="control-btn">◀</div>
+            <div id="btn-right" class="control-btn">▶</div>
+        </div>
+        <div class="control-group right-group">
+            <div id="btn-jump" class="control-btn neon-btn">▲</div>
+        </div>
+    </div>
+    
+  </body>
+</html>
