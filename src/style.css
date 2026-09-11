@@ -1,0 +1,56 @@
+body { margin: 0; overflow: hidden; background: #2d2d2d; font-family: sans-serif; color: white;}
+#game-container { position: absolute; width: 100vw; height: 100vh; }
+canvas { display: block; margin: 0 auto; }
+
+#ui-layer {
+  position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+  display: flex; justify-content: center; align-items: center;
+  pointer-events: none; /* Para que los clics pasen al juego cuando el menú se oculte */
+}
+
+#menu {
+  background: rgba(0, 0, 0, 0.85); padding: 30px; border-radius: 12px;
+  text-align: center; pointer-events: auto; border: 2px solid #555;
+}
+
+button { padding: 10px 20px; margin: 5px; cursor: pointer; font-weight: bold; border-radius: 5px; border: none; }
+#btn-create { background: #4CAF50; color: white; }
+#btn-join { background: #2196F3; color: white; }
+input { padding: 10px; font-size: 16px; text-transform: uppercase; text-align: center; width: 150px; }
+
+/* --- Controles Móviles --- */
+#mobile-controls {
+    position: absolute; bottom: 30px; left: 0; width: 100%; height: 80px;
+    pointer-events: none; /* Deja pasar los clics donde no hay botones */
+    display: flex; justify-content: space-between; padding: 0 30px; box-sizing: border-box;
+    z-index: 100; /* Asegura que estén por encima del juego */
+}
+
+.control-group { display: flex; gap: 15px; pointer-events: auto; }
+
+.control-btn {
+    width: 65px; height: 65px; 
+    background: rgba(20, 20, 20, 0.6); 
+    border: 2px solid #0ff; /* Borde cyan neón */
+    box-shadow: 0 0 10px #0ff, inset 0 0 10px #0ff;
+    border-radius: 50%; 
+    display: flex; justify-content: center; align-items: center;
+    font-size: 24px; color: #fff; text-shadow: 0 0 5px #fff;
+    user-select: none; touch-action: manipulation; /* Evita zoom accidental */
+}
+
+.control-btn:active {
+    background: rgba(0, 255, 255, 0.4);
+    transform: scale(0.95);
+}
+
+.neon-btn {
+    border-color: #f0f; /* Borde magenta neón para el salto */
+    box-shadow: 0 0 10px #f0f, inset 0 0 10px #f0f;
+}
+.neon-btn:active { background: rgba(255, 0, 255, 0.4); }
+
+/* Solo mostrar controles si la pantalla es pequeña (móvil) */
+@media (max-width: 850px) {
+    #mobile-controls { display: flex !important; }
+}
